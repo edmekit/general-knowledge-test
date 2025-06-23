@@ -5,7 +5,7 @@ with open("quiz.txt", "r") as f:
     question = f.readlines()
 
 i = 0 
-while i < len(question):
+while i + 5 < len(question):
     ques = question[i].strip()
     cho_a = question[i+1].strip()
     cho_b = question[i+2].strip()
