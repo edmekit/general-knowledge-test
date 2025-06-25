@@ -1,9 +1,36 @@
 import random
 questions = []
 
-with open("quiz.txt", "r") as f:
-    question = f.readlines()
+print("Welcome to the Quiz Game!")
+print()
 
+print("General Knowledge, Science, and Pop Culture. Choose a Category.")
+choice = input("Your choice: ").strip().upper()
+if choice == "GENERAL KNOWLEDGE":
+    with open("quiz.txt", "r") as f:
+         question = f.readlines()
+elif choice == "POP CULTURE":
+    with open("popculture.txt", "r") as f:
+        question = f.readlines()          
+elif choice == "SCIENCE":
+    with open("science.txt", "r") as f:
+        question = f.readlines()
+while choice not in ["GENERAL KNOWLEDGE", "POP CULTURE", "SCIENCE"]:
+        print("Invalid choice. Please choose again.")
+        choice = input("Your choice: ").strip().upper()
+        if choice == "GENERAL KNOWLEDGE":
+            with open("quiz.txt", "r") as f:
+                question = f.readlines()
+                break
+        elif choice == "POP CULTURE":
+            with open("popculture.txt", "r") as f:
+                question = f.readlines()
+                break
+        elif choice == "SCIENCE":
+            with open("science.txt", "r") as f:
+                question = f.readlines()
+                break
+     
 i = 0 
 while i + 5 < len(question):
     ques = question[i].strip()
@@ -34,6 +61,9 @@ for quest in questions:
         print()
         score += 1
         attempts += 1
+    elif user_choice == "X":
+        print(f"Your score is {score}/{attempts}")
+        break
     else:
         print(f"Oops, incorrect, the answer is {quest['answer']}") 
         print()
