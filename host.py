@@ -4,29 +4,29 @@ questions = []
 print("Welcome to the Quiz Game!")
 print()
 
-print("General Knowledge, Science, and Pop Culture. Choose a Category.")
+print("A. General Knowledge, B.Science, and C. Pop Culture. Choose a Category. Press X to exit.")
 choice = input("Your choice: ").strip().upper()
-if choice == "GENERAL KNOWLEDGE":
+if choice == "A":
     with open("quiz.txt", "r") as f:
          question = f.readlines()
-elif choice == "POP CULTURE":
+elif choice == "C":
     with open("popculture.txt", "r") as f:
         question = f.readlines()          
-elif choice == "SCIENCE":
+elif choice == "B":
     with open("science.txt", "r") as f:
         question = f.readlines()
-while choice not in ["GENERAL KNOWLEDGE", "POP CULTURE", "SCIENCE"]:
+while choice not in ["A", "C", "B"]:
         print("Invalid choice. Please choose again.")
         choice = input("Your choice: ").strip().upper()
-        if choice == "GENERAL KNOWLEDGE":
+        if choice == "A":
             with open("quiz.txt", "r") as f:
                 question = f.readlines()
                 break
-        elif choice == "POP CULTURE":
+        elif choice == "C":
             with open("popculture.txt", "r") as f:
                 question = f.readlines()
                 break
-        elif choice == "SCIENCE":
+        elif choice == "B":
             with open("science.txt", "r") as f:
                 question = f.readlines()
                 break
